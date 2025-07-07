@@ -1,0 +1,999 @@
+Workflow failed. Causes: S40:Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/GroupByKey/Read+Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/GroupByKey/GroupByWindow+Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/ExpandIterable/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/RestoreMetadata/ParDo(Anonymous)/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/ParMultiDo(WriteTables)+Insert good records into Bigquery/BatchLoads/Keys/Keys/Map/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/Convert to TableDestinations/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/WithKeys/AddKeys/Map/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/Window.Into()/Window.Assign+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/GroupByKey/Write failed., The job failed because a work item has failed 4 times. Look in previous log entries for the cause of each one of the 4 failures. For more information, see https://cloud.google.com/dataflow/docs/guides/common-errors#job-failed-four-times. The work item was attempted on these workers: 
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "3VMOycvAAyGsFqOg347LLA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000795540",
+    "endTime": "1751000795555",
+    "startTime": "1751000795555"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "3VMOycvAAyGsFqOg347LLA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000795540",
+    "endTime": "1751000795555",
+    "startTime": "1751000795555"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b,
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "JPcxyH4Zs7fMd7KmFMzLEQ==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000806444",
+    "endTime": "1751000806485",
+    "startTime": "1751000806485"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "JPcxyH4Zs7fMd7KmFMzLEQ==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000806444",
+    "endTime": "1751000806485",
+    "startTime": "1751000806485"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b,
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "X2mx+icGUHl5MUX19M35bA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000819923",
+    "endTime": "1751000819937",
+    "startTime": "1751000819937"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "X2mx+icGUHl5MUX19M35bA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000819923",
+    "endTime": "1751000819937",
+    "startTime": "1751000819937"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b,
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "92Xi0wHDpVh7UMF5YQBv/w==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000830447",
+    "endTime": "1751000830464",
+    "startTime": "1751000830464"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "92Xi0wHDpVh7UMF5YQBv/w==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000830447",
+    "endTime": "1751000830464",
+    "startTime": "1751000830464"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b
+{
+errorGroups: [1]
+insertId: "1nnz8gvd2iy6"
+labels: {4}
+logName: "projects/tfm-comillas-25/logs/dataflow.googleapis.com%2Fjob-message"
+payload: "textPayload"
+receiveLocation: "us-central1"
+receiveTimestamp: "2025-06-27T05:07:15.377684342Z"
+resource: {2}
+severity: "ERROR"
+textPayload: "Workflow failed. Causes: S40:Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/GroupByKey/Read+Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/GroupByKey/GroupByWindow+Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/ExpandIterable/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionsReshuffle/RestoreMetadata/ParDo(Anonymous)/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/ParMultiDo(WriteTables)+Insert good records into Bigquery/BatchLoads/Keys/Keys/Map/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/Convert to TableDestinations/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/WithKeys/AddKeys/Map/ParMultiDo(Anonymous)+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/Window.Into()/Window.Assign+Insert good records into Bigquery/BatchLoads/SinglePartitionWriteTables/GroupByKey/Write failed., The job failed because a work item has failed 4 times. Look in previous log entries for the cause of each one of the 4 failures. For more information, see https://cloud.google.com/dataflow/docs/guides/common-errors#job-failed-four-times. The work item was attempted on these workers: 
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "3VMOycvAAyGsFqOg347LLA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000795540",
+    "endTime": "1751000795555",
+    "startTime": "1751000795555"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "3VMOycvAAyGsFqOg347LLA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-2?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000795540",
+    "endTime": "1751000795555",
+    "startTime": "1751000795555"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b,
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "JPcxyH4Zs7fMd7KmFMzLEQ==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000806444",
+    "endTime": "1751000806485",
+    "startTime": "1751000806485"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "JPcxyH4Zs7fMd7KmFMzLEQ==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-4?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000806444",
+    "endTime": "1751000806485",
+    "startTime": "1751000806485"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b,
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "X2mx+icGUHl5MUX19M35bA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000819923",
+    "endTime": "1751000819937",
+    "startTime": "1751000819937"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "X2mx+icGUHl5MUX19M35bA==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-6?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000819923",
+    "endTime": "1751000819937",
+    "startTime": "1751000819937"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b,
+
+      Root cause: org.apache.beam.sdk.util.UserCodeException: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "92Xi0wHDpVh7UMF5YQBv/w==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000830447",
+    "endTime": "1751000830464",
+    "startTime": "1751000830464"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.util.UserCodeException.wrap(UserCodeException.java:39)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn$DoFnInvoker.invokeFinishBundle(Unknown Source)
+  at org.apache.beam.fn.harness.FnApiDoFnRunner.finishBundle(FnApiDoFnRunner.java:1813)
+  at org.apache.beam.fn.harness.data.PTransformFunctionRegistry.lambda$register$0(PTransformFunctionRegistry.java:116)
+  at org.apache.beam.fn.harness.control.ProcessBundleHandler.processBundle(ProcessBundleHandler.java:553)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient.delegateOnInstructionRequestType(BeamFnControlClient.java:150)
+  at org.apache.beam.fn.harness.control.BeamFnControlClient$InboundObserver.lambda$onNext$0(BeamFnControlClient.java:115)
+  at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  at org.apache.beam.sdk.util.UnboundedScheduledExecutorService$ScheduledFutureTask.run(UnboundedScheduledExecutorService.java:163)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.RuntimeException: Failed to create job with prefix beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000, reached max retries: 3, last failed job: {
+  "configuration": {
+    "jobType": "LOAD",
+    "labels": {
+      "beam_job_id": "2025-06-26_22_02_39-15448695889991519578"
+    },
+    "load": {
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "bicimad",
+        "projectId": "tfm-comillas-25",
+        "tableId": "2020_stations"
+      },
+      "ignoreUnknownValues": false,
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "useAvroLogicalTypes": false,
+      "writeDisposition": "WRITE_APPEND"
+    }
+  },
+  "etag": "92Xi0wHDpVh7UMF5YQBv/w==",
+  "id": "tfm-comillas-25:us-central1.beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8",
+    "location": "us-central1",
+    "projectId": "tfm-comillas-25"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "serviceAccount:82632080867-compute@developer.gserviceaccount.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/tfm-comillas-25/jobs/beam_bq_job_LOAD_csvtobigquerykbuilder0612013958a701ed0c_7758a24bbb6d4ebd9ca75c18b7f272ce_9d7480f4c67acd5ffca104d370320402_00001_00000-8?location=us-central1",
+  "statistics": {
+    "creationTime": "1751000830447",
+    "endTime": "1751000830464",
+    "startTime": "1751000830464"
+  },
+  "status": {
+    "errorResult": {
+      "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+      "reason": "invalid"
+    },
+    "errors": [
+      {
+        "message": "Provided Schema does not match Table tfm-comillas-25:bicimad.2020_stations. Cannot add fields (field: _id)",
+        "reason": "invalid"
+      }
+    ],
+    "state": "DONE"
+  },
+  "user_email": "82632080867-compute@developer.gserviceaccount.com"
+}.
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJob.runJob(BigQueryHelpers.java:209)
+  at org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers$PendingJobManager.waitForDone(BigQueryHelpers.java:162)
+  at org.apache.beam.sdk.io.gcp.bigquery.WriteTables$WriteTablesDoFn.finishBundle(WriteTables.java:384)
+
+      Worker ID: bicimad-2020-stations-06262202-mb33-harness-7h9b"
+timestamp: "2025-06-27T05:07:14.521549814Z"
+traceSampled: false
+}

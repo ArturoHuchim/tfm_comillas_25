@@ -1,0 +1,13 @@
+export PROJECT_ID=tfm-comillas-25
+export REPO_NAME=tfm-comillas-25-artreg-docker
+export REGION=us-central1
+export IMAGE_NAME=api-opendata-emt
+export SVC_JOB=crunjob-integration
+export VERSION=12
+export BUCKET_NAME='tfm-comillas-25-rawdata' 
+export USERNAME=emt-user
+export PASSWORD=emt-password
+export AEMET_TOKEN=aemet-token
+export ID_CD=28079
+export URL_EMT="https://openapi.emtmadrid.es/"
+export URL_AEMET="https://opendata.aemet.es/" 

@@ -1,0 +1,23 @@
+[
+    {
+      "name": "_id",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "stations",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "source_file",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    }
+  ]

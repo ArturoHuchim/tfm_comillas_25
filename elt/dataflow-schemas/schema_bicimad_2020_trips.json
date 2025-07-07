@@ -1,0 +1,16 @@
+{
+  "BigQuery Schema": [
+    { "name": "_id", "type": "STRING" },
+    { "name": "user_day_code", "type": "STRING" },
+    { "name": "idplug_base", "type": "INTEGER" },
+    { "name": "user_type", "type": "INTEGER" },
+    { "name": "idunplug_base", "type": "INTEGER" },
+    { "name": "travel_time", "type": "INTEGER" },
+    { "name": "idunplug_station", "type": "INTEGER" },
+    { "name": "ageRange", "type": "INTEGER" },
+    { "name": "idplug_station", "type": "INTEGER" },
+    { "name": "unplug_hourTime", "type": "STRING" },
+    { "name": "zip_code", "type": "STRING" },
+    { "name": "source_file", "type": "STRING" }
+  ]
+}

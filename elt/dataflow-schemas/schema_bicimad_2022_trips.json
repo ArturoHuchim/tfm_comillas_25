@@ -1,0 +1,23 @@
+{
+  "BigQuery Schema": [
+    { "name": "fecha", "type": "STRING" },
+    { "name": "idBike", "type": "FLOAT" },
+    { "name": "fleet", "type": "FLOAT" },
+    { "name": "trip_minutes", "type": "FLOAT" },
+    { "name": "geolocation_unlock", "type": "STRING" },
+    { "name": "address_unlock", "type": "STRING" },
+    { "name": "unlock_date", "type": "STRING" },
+    { "name": "locktype", "type": "STRING" },
+    { "name": "unlocktype", "type": "STRING" },
+    { "name": "geolocation_lock", "type": "STRING" },
+    { "name": "address_lock", "type": "STRING" },
+    { "name": "lock_date", "type": "STRING" },
+    { "name": "station_unlock", "type": "STRING" },
+    { "name": "dock_unlock", "type": "FLOAT" },
+    { "name": "unlock_station_name", "type": "STRING" },
+    { "name": "station_lock", "type": "FLOAT" },
+    { "name": "dock_lock", "type": "FLOAT" },
+    { "name": "lock_station_name", "type": "STRING" },
+    { "name": "source_file", "type": "STRING" }
+  ]
+}

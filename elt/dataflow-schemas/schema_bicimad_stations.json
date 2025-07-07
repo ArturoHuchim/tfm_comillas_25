@@ -1,0 +1,7 @@
+{
+  "BigQuery Schema": [
+    { "name": "_id", "type": "STRING" },
+    { "name": "stations", "type": "STRING" },
+    { "name": "source_file", "type": "STRING" }
+  ]
+}
